@@ -1,6 +1,6 @@
 fun main() {
-    val firstPost = Post(0, 1, 1, 1, 1, "firstPost", Comment(), Copyright(), Like(), Report())
-    val secondPost = Post(0, 2, 2, 2, 2, "secondPost", Comment(), Copyright(), Like(), Report())
+    val firstPost = Post(0, 1, 1, 1, 1, "firstPost", Comment(), Copyright(), Like(), Report(), null,null,null,null,null,null,null,null,null,null,null, null, null)
+    val secondPost = Post(0, 2, 2, 2, 2, "secondPost", Comment(), Copyright(), Like(), Report(), null,null,null,null,null,null,null,null,null,null,null, null, null)
 
     WallService.add(firstPost)
     WallService.add(secondPost)
