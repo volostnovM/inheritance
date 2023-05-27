@@ -5,6 +5,7 @@ data class Post(
     val createdBy: Int,
     val date: Int,
     val text: String?,
+    val attachments: Array<Attachments>,
     val comments: Comment,
     val copyright: Copyright,
     val likes: Like,
