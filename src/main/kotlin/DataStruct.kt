@@ -6,7 +6,7 @@ data class Post(
     val date: Int,
     val text: String?,
     val attachments: Array<Attachments>,
-    val comments: Comment,
+    var comments: Comment?,
     val copyright: Copyright,
     val likes: Like,
     val reposts: Report,
@@ -25,12 +25,18 @@ data class Post(
     val postponedId: Int?
 )
 
+data class ReportComment(
+    val ownerId: Int,
+    val commentId: Int,
+    val reason: Int
+)
+
+
+
 data class Comment(
-    val count: Int = 0,
-    val canPost: Boolean = true,
-    val groupsCanPost: Boolean = true,
-    val canClose: Boolean = true,
-    val canOpen: Boolean = true
+    val id: Int,
+    val text: String,
+    val fromId: Int
 )
 
 data class Copyright(
