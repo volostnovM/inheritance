@@ -1,5 +1,6 @@
 class PostNotFoundException(message: String) : RuntimeException(message)
 class ReasonNotFoundException(message: String) : RuntimeException(message)
+class CommentNotFoundException(message: String) : RuntimeException(message)
 
 fun main() {
     val firstPhoto = Photo(1,1,"URL_firstPhoto","URL_firstPhoto")

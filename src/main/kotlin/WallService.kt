@@ -20,7 +20,7 @@ object WallService {
                 return throw ReasonNotFoundException("Неверно указана причина")
             }
         }
-        return throw PostNotFoundException("Пост для записи жалобы не найден:)")
+        return throw CommentNotFoundException("Коммент для записи жалобы не найден:)")
     }
 
     fun createComment(postId: Int, comment: Comment): Comment {
@@ -60,5 +60,7 @@ object WallService {
     fun clear() {
         arrayPost = emptyArray()
         identificator = 0
+        comments = emptyArray()
+        reports = emptyArray()
     }
 }

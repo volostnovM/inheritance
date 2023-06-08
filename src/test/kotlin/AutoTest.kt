@@ -6,25 +6,24 @@ class AutoTest {
 
     @Test
     fun checkAddNeReportToComment() {
-        val firstReport = ReportComment(0,0,0)
+        val firstReport = ReportComment(0,0,1)
+        checkAddNewCommentToPost()
         val newReport = WallService.createReport(0, firstReport)
         assertEquals(firstReport, newReport)
     }
 
-//    @Test(expected = PostNotFoundException::class)
-//    fun shouldThrowReportToComment() {
-//        val firstReport = ReportComment(0,0,0)
-//        WallService.createReport(0, firstReport)
-//    }
+    @Test(expected = CommentNotFoundException::class)
+    fun shouldThrowReportToComment() {
+        val firstReport = ReportComment(0,0,0)
+        WallService.createReport(0, firstReport)
+    }
 
-//    @Test(expected = ReasonNotFoundException::class)
-//    fun shouldThrowReasonToComment() {
-//        val firstReport = ReportComment(0,0,5)
-//        val firstComment = Comment(0, "Кто-то оставил коммент", 0)
-//        checkAddToArray()
-//        val newComment = WallService.createComment(1,firstComment)
-//        WallService.createReport(0, firstReport)
-//    }
+    @Test(expected = ReasonNotFoundException::class)
+    fun shouldThrowReasonToComment() {
+        val firstReport = ReportComment(0,0,15)
+        checkAddNewCommentToPost()
+        WallService.createReport(0, firstReport)
+    }
 
     @Test
     fun checkAddNewCommentToPost() {
